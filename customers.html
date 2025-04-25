@@ -686,7 +686,7 @@
             placeholder=""
             required
           />
-          <a class="btn-signup">Sign Up</a>
+          <a ng-click="checked = !checked" class="btn-signup">Sign Up</a>
         </form>
 
         <div class="success">
@@ -699,6 +699,7 @@
             y="0px"
             viewBox="0 0 60 60"
             id="check"
+            ng-class="checked ? 'checked' : ''"
           >
             <path
               fill="#ffffff"
@@ -709,7 +710,12 @@
           </svg>
           <div class="successtext">
             <p>Thanks for signing up! Check your email for confirmation.</p>
-            <a class="btn-goback btn-togo" onClick="history.go()">To go</a>
+            <a
+              class="btn-goback btn-togo"
+              value="Refresh"
+              onClick="history.go()"
+              >To go</a
+            >
           </div>
         </div>
       </div>
@@ -722,11 +728,11 @@
         <div class="cover-photo"></div>
         <div class="profile-photo"></div>
         <h1 class="welcome">Welcome</h1>
-        <a class="btn-goback" onClick="history.go()">Go back</a>
+        <a class="btn-goback" value="Refresh" onClick="history.go()">Go back</a>
       </div>
     </div>
 
-    <a id="refresh" onClick="history.go()">
+    <a id="refresh" value="Refresh" onClick="history.go()">
       <svg
         class="refreshicon"
         version="1.1"
